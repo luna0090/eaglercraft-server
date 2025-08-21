@@ -3,7 +3,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 COPY server.jar /app/
-COPY eaglerxserver.jar /app/
+COPY EaglerXServer.jar /app/
 COPY start.sh /app/
 COPY eula.txt /app/
 
