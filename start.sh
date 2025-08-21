@@ -1,8 +1,12 @@
 #!/bin/bash
-# Default port if $PORT is not set
+# Use Render's assigned port or default
 PORT=${PORT:-25565}
 
-echo "Starting Eaglercraft server on port $PORT"
+echo "Starting Eaglercraft server..."
+java -Xmx512M -jar server.jar --port 25565 &
 
-# Start the server and bind to the port
-java -Xmx512M -jar server.jar --port $PORT
+echo "Starting EaglerXServer proxy on port $PORT..."
+java -Xmx256M -jar eaglerxserver.jar --server ws://localhost:25565 --port $PORT
+
+# Keep the script running
+wait
