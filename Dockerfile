@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy server jar and start script
 COPY server.jar /app/
 COPY start.sh /app/
-
+COPY eula.txt /app/
 # Expose the default port (optional for clarity)
 EXPOSE 25565
 
